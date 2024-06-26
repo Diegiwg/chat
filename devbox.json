@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.11.1/.schema/devbox.schema.json",
+  "packages": ["go@latest"],
+  "shell": {
+    "init_hook": [],
+    "scripts": {
+      "build": [
+        "go build -o bin/chat ."
+      ],
+      "dev": [
+        "devbox run build &> /dev/null",
+        "bin/chat $@"
+      ]
+    }
+  }
+}
