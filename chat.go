@@ -1,12 +1,14 @@
 package main
 
-import "github.com/Diegiwg/cli"
+import (
+	ai "github.com/Diegiwg/chat/ai"
+)
 
 func main() {
-	app := cli.NewApp()
-
-	err := app.Run()
-	if err != nil {
-		panic(err)
+	history := &ai.Payload{
+		Model:    "mistralai/Mixtral-8x7B-Instruct-v0.1",
+		Messages: []ai.PayloadMessage{},
 	}
+
+	ai.Talk(history, "Hello, how are you?")
 }
